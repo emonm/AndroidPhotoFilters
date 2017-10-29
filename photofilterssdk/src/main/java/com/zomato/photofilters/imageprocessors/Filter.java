@@ -3,10 +3,10 @@ package com.zomato.photofilters.imageprocessors;
 
 import android.graphics.Bitmap;
 
-import com.zomato.photofilters.imageprocessors.subfilters.BrightnessSubfilter;
-import com.zomato.photofilters.imageprocessors.subfilters.ColorOverlaySubfilter;
-import com.zomato.photofilters.imageprocessors.subfilters.ContrastSubfilter;
-import com.zomato.photofilters.imageprocessors.subfilters.ToneCurveSubfilter;
+import com.zomato.photofilters.imageprocessors.subfilters.BrightnessSubFilter;
+import com.zomato.photofilters.imageprocessors.subfilters.ColorOverlaySubFilter;
+import com.zomato.photofilters.imageprocessors.subfilters.ContrastSubFilter;
+import com.zomato.photofilters.imageprocessors.subfilters.ToneCurveSubFilter;
 import com.zomato.photofilters.imageprocessors.subfilters.VignetteSubfilter;
 
 import java.util.ArrayList;
@@ -31,10 +31,10 @@ public class Filter {
      * Adds a Subfilter to the Main Filter
      *
      * @param subFilter Subfilter like contrast, brightness, tone Curve etc. subfilter
-     * @see BrightnessSubfilter
-     * @see ColorOverlaySubfilter
-     * @see ContrastSubfilter
-     * @see ToneCurveSubfilter
+     * @see BrightnessSubFilter
+     * @see ColorOverlaySubFilter
+     * @see ContrastSubFilter
+     * @see ToneCurveSubFilter
      * @see VignetteSubfilter
      * @see com.zomato.photofilters.imageprocessors.subfilters.SaturationSubfilter
      */

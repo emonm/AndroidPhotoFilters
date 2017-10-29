@@ -1,6 +1,7 @@
 package com.zomato.photofilters.imageprocessors.subfilters;
 
 import android.graphics.Bitmap;
+
 import com.zomato.photofilters.geometry.BezierSpline;
 import com.zomato.photofilters.geometry.Point;
 import com.zomato.photofilters.imageprocessors.ImageProcessor;
@@ -9,9 +10,9 @@ import com.zomato.photofilters.imageprocessors.SubFilter;
 
 /**
  * @author varun
- * Subfilter to tweak rgb channels of an image
+ *         Subfilter to tweak rgb channels of an image
  */
-public class ToneCurveSubfilter implements SubFilter {
+public class ToneCurveSubFilter implements SubFilter {
     private static String tag = "";
 
     // These are knots which contains the plot points
@@ -33,7 +34,7 @@ public class ToneCurveSubfilter implements SubFilter {
      * @param greenKnots Knots in green Channel
      * @param blueKnots  Knots in Blue channel
      */
-    public ToneCurveSubfilter(Point[] rgbKnots, Point[] redKnots, Point[] greenKnots, Point[] blueKnots) {
+    public ToneCurveSubFilter(Point[] rgbKnots, Point[] redKnots, Point[] greenKnots, Point[] blueKnots) {
         Point[] straightKnots = new Point[2];
         straightKnots[0] = new Point(0, 0);
         straightKnots[1] = new Point(255, 255);
@@ -108,6 +109,6 @@ public class ToneCurveSubfilter implements SubFilter {
 
     @Override
     public void setTag(Object tag) {
-        ToneCurveSubfilter.tag = (String) tag;
+        ToneCurveSubFilter.tag = (String) tag;
     }
 }

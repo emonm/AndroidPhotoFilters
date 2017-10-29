@@ -11,7 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
-import com.zomato.photofilters.SampleFilters;
+import com.zomato.photofilters.FilterPack;
 import com.zomato.photofilters.imageprocessors.Filter;
 
 import java.util.List;
@@ -71,19 +71,19 @@ public class MainActivity extends AppCompatActivity implements ThumbnailCallback
                 ThumbnailsManager.clearThumbs();
                 ThumbnailsManager.addThumb(t1); // Original Image
 
-                t2.filter = SampleFilters.getStarLitFilter();
+                t2.filter = FilterPack.getStarLitFilter();
                 ThumbnailsManager.addThumb(t2);
 
-                t3.filter = SampleFilters.getBlueMessFilter();
+                t3.filter = FilterPack.getBlueMessFilter();
                 ThumbnailsManager.addThumb(t3);
 
-                t4.filter = SampleFilters.getAweStruckVibeFilter();
+                t4.filter = FilterPack.getAweStruckVibeFilter();
                 ThumbnailsManager.addThumb(t4);
 
-                t5.filter = SampleFilters.getLimeStutterFilter();
+                t5.filter = FilterPack.getLimeStutterFilter();
                 ThumbnailsManager.addThumb(t5);
 
-                t6.filter = SampleFilters.getNightWhisperFilter();
+                t6.filter = FilterPack.getNightWhisperFilter();
                 ThumbnailsManager.addThumb(t6);
 
                 List<ThumbnailItem> thumbs = ThumbnailsManager.processThumbs(context);

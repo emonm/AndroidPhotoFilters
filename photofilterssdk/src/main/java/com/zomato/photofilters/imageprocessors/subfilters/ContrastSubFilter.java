@@ -1,15 +1,16 @@
 package com.zomato.photofilters.imageprocessors.subfilters;
 
 import android.graphics.Bitmap;
+
 import com.zomato.photofilters.imageprocessors.ImageProcessor;
 import com.zomato.photofilters.imageprocessors.SubFilter;
 
 
 /**
  * @author varun
- * Class to add Contrast Subfilter
+ *         Class to add Contrast Subfilter
  */
-public class ContrastSubfilter implements SubFilter {
+public class ContrastSubFilter implements SubFilter {
 
     private static String tag = "";
 
@@ -21,7 +22,7 @@ public class ContrastSubfilter implements SubFilter {
      *
      * @param contrast The contrast value ranges in fraction, value 1 has no effect
      */
-    public ContrastSubfilter(float contrast) {
+    public ContrastSubFilter(float contrast) {
         this.contrast = contrast;
     }
 
@@ -37,7 +38,7 @@ public class ContrastSubfilter implements SubFilter {
 
     @Override
     public void setTag(Object tag) {
-        ContrastSubfilter.tag = (String) tag;
+        ContrastSubFilter.tag = (String) tag;
     }
 
     /**
