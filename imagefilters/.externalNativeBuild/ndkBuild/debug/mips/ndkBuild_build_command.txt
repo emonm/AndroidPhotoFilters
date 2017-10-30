@@ -1,0 +1,17 @@
+Executable : /Users/ravi/Library/Android/sdk/ndk-bundle/ndk-build
+arguments : 
+NDK_PROJECT_PATH=null
+APP_BUILD_SCRIPT=/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/Android.mk
+NDK_APPLICATION_MK=/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/Application.mk
+APP_ABI=mips
+NDK_ALL_ABIS=mips
+NDK_DEBUG=1
+APP_PLATFORM=android-15
+NDK_OUT=/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/build/intermediates/ndkBuild/debug/obj
+NDK_LIBS_OUT=/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/build/intermediates/ndkBuild/debug/lib
+APP_SHORT_COMMANDS=false
+LOCAL_SHORT_COMMANDS=false
+-B
+-n
+jvmArgs : 
+

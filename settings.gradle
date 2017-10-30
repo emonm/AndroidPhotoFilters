@@ -1,1 +1,1 @@
-include ':example', ':photofilterssdk'
+include ':example', ':imagefilters'

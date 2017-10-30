@@ -9,12 +9,15 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.zomato.photofilters.FilterPack;
 import com.zomato.photofilters.imageprocessors.Filter;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements ThumbnailCallback {
     static {
@@ -55,41 +58,21 @@ public class MainActivity extends AppCompatActivity implements ThumbnailCallback
         Runnable r = new Runnable() {
             public void run() {
                 Bitmap thumbImage = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.photo), 640, 640, false);
-                ThumbnailItem t1 = new ThumbnailItem();
-                ThumbnailItem t2 = new ThumbnailItem();
-                ThumbnailItem t3 = new ThumbnailItem();
-                ThumbnailItem t4 = new ThumbnailItem();
-                ThumbnailItem t5 = new ThumbnailItem();
-                ThumbnailItem t6 = new ThumbnailItem();
-
-                t1.image = thumbImage;
-                t2.image = thumbImage;
-                t3.image = thumbImage;
-                t4.image = thumbImage;
-                t5.image = thumbImage;
-                t6.image = thumbImage;
                 ThumbnailsManager.clearThumbs();
-                ThumbnailsManager.addThumb(t1); // Original Image
+                HashMap<String, Filter> filters = FilterPack.getFilterPack();
 
-                t2.filter = FilterPack.getStarLitFilter();
-                ThumbnailsManager.addThumb(t2);
-
-                t3.filter = FilterPack.getBlueMessFilter();
-                ThumbnailsManager.addThumb(t3);
-
-                t4.filter = FilterPack.getAweStruckVibeFilter();
-                ThumbnailsManager.addThumb(t4);
-
-                t5.filter = FilterPack.getLimeStutterFilter();
-                ThumbnailsManager.addThumb(t5);
-
-                t6.filter = FilterPack.getNightWhisperFilter();
-                ThumbnailsManager.addThumb(t6);
+                for (Map.Entry<String, Filter> entry : filters.entrySet()) {
+                    ThumbnailItem thumbnailItem = new ThumbnailItem();
+                    thumbnailItem.image = thumbImage;
+                    thumbnailItem.filter = entry.getValue();
+                    ThumbnailsManager.addThumb(thumbnailItem);
+                }
 
                 List<ThumbnailItem> thumbs = ThumbnailsManager.processThumbs(context);
 
                 ThumbnailsAdapter adapter = new ThumbnailsAdapter(thumbs, (ThumbnailCallback) activity);
                 thumbListView.setAdapter(adapter);
+
                 adapter.notifyDataSetChanged();
             }
         };

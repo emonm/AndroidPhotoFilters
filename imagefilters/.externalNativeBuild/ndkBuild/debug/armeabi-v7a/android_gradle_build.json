@@ -1,0 +1,33 @@
+{
+  "buildFiles": [
+    "/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/Android.mk",
+    "/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/Application.mk"
+  ],
+  "cleanCommands": [
+    "/Users/ravi/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/Application.mk APP_ABI\u003darmeabi-v7a NDK_ALL_ABIS\u003darmeabi-v7a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-15 NDK_OUT\u003d/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003d/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/build/intermediates/ndkBuild/debug/lib clean"
+  ],
+  "libraries": {
+    "NativeImageProcessor-debug-armeabi-v7a": {
+      "buildCommand": "/Users/ravi/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/Application.mk APP_ABI\u003darmeabi-v7a NDK_ALL_ABIS\u003darmeabi-v7a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-15 NDK_OUT\u003d/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003d/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/build/intermediates/ndkBuild/debug/lib /Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/build/intermediates/ndkBuild/debug/obj/local/armeabi-v7a/libNativeImageProcessor.so",
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "NativeImageProcessor",
+      "files": [
+        {
+          "src": "/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni/NativeImageProcessor.cpp",
+          "flags": "\"-gcc-toolchain\" \"/Users/ravi/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64\" \"-fpic\" \"-ffunction-sections\" \"-funwind-tables\" \"-fstack-protector-strong\" \"-Wno-invalid-command-line-argument\" \"-Wno-unused-command-line-argument\" \"-no-canonical-prefixes\" \"-fno-integrated-as\" \"-g\" \"-target\" \"armv7-none-linux-androideabi15\" \"-march\u003darmv7-a\" \"-mfloat-abi\u003dsoftfp\" \"-mfpu\u003dvfpv3-d16\" \"-fno-exceptions\" \"-fno-rtti\" \"-mthumb\" \"-Os\" \"-DNDEBUG\" \"-I/Users/ravi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include\" \"-I/Users/ravi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include\" \"-I/Users/ravi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward\" \"-I/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/src/main/jni\" \"-frtti\" \"-fexceptions\" \"-DANDROID\" \"-DANDROID\" \"-D__ANDROID_API__\u003d15\" \"-Wa,--noexecstack\" \"-Wformat\" \"-Werror\u003dformat-security\" \"--sysroot\" \"/Users/ravi/Library/Android/sdk/ndk-bundle/sysroot\" \"-isystem\" \"/Users/ravi/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi\""
+        }
+      ],
+      "output": "/Users/ravi/AndroidStudioWorkspace/AndroidPhotoFilters/imagefilters/build/intermediates/ndkBuild/debug/obj/local/armeabi-v7a/libNativeImageProcessor.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-armeabi-v7a": {
+      "cppCompilerExecutable": "/Users/ravi/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
