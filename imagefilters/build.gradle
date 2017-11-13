@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 
 def packageName = 'info.androidhive'
-def libraryVersion = '1.0.4'
+def libraryVersion = '1.0.6'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -102,7 +102,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:26.0.2'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:26.0.2'
 }

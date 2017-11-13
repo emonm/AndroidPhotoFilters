@@ -19,12 +19,25 @@ import java.util.List;
  */
 public class Filter {
     private List<SubFilter> subFilters = new ArrayList<>();
+    private String name;
 
     public Filter(Filter filter) {
         this.subFilters = filter.subFilters;
     }
 
     public Filter() {
+    }
+
+    public Filter(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**

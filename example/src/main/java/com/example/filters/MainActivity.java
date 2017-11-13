@@ -27,19 +27,21 @@ public class MainActivity extends AppCompatActivity implements ThumbnailCallback
     private Activity activity;
     private RecyclerView thumbListView;
     private ImageView placeHolderImageView;
+    int drawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         activity = this;
+        drawable = R.drawable.ravi;
         initUIWidgets();
     }
 
     private void initUIWidgets() {
         thumbListView = (RecyclerView) findViewById(R.id.thumbnails);
         placeHolderImageView = (ImageView) findViewById(R.id.place_holder_imageview);
-        placeHolderImageView.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(this.getApplicationContext().getResources(), R.drawable.photo), 640, 640, false));
+        placeHolderImageView.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(this.getApplicationContext().getResources(), drawable), 640, 640, false));
         initHorizontalList();
     }
 
@@ -57,14 +59,14 @@ public class MainActivity extends AppCompatActivity implements ThumbnailCallback
         Handler handler = new Handler();
         Runnable r = new Runnable() {
             public void run() {
-                Bitmap thumbImage = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.photo), 640, 640, false);
+                Bitmap thumbImage = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), drawable), 640, 640, false);
                 ThumbnailsManager.clearThumbs();
-                HashMap<String, Filter> filters = FilterPack.getFilterPack();
+                List<Filter> filters = FilterPack.getFilterPack(getApplicationContext());
 
-                for (Map.Entry<String, Filter> entry : filters.entrySet()) {
+                for (Filter filter : filters) {
                     ThumbnailItem thumbnailItem = new ThumbnailItem();
                     thumbnailItem.image = thumbImage;
-                    thumbnailItem.filter = entry.getValue();
+                    thumbnailItem.filter = filter;
                     ThumbnailsManager.addThumb(thumbnailItem);
                 }
 
@@ -81,6 +83,6 @@ public class MainActivity extends AppCompatActivity implements ThumbnailCallback
 
     @Override
     public void onThumbnailClick(Filter filter) {
-        placeHolderImageView.setImageBitmap(filter.processFilter(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(this.getApplicationContext().getResources(), R.drawable.photo), 640, 640, false)));
+        placeHolderImageView.setImageBitmap(filter.processFilter(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(this.getApplicationContext().getResources(), drawable), 640, 640, false)));
     }
 }

@@ -28,8 +28,8 @@ public final class ThumbnailsManager {
             float size = context.getResources().getDimension(R.dimen.thumbnail_size);
             thumb.image = Bitmap.createScaledBitmap(thumb.image, (int) size, (int) size, false);
             thumb.image = thumb.filter.processFilter(thumb.image);
-            //cropping circle
-            thumb.image = GeneralUtils.generateCircularBitmap(thumb.image);
+            // cropping circle
+            // thumb.image = GeneralUtils.generateCircularBitmap(thumb.image);
             processedThumbs.add(thumb);
         }
         return processedThumbs;
