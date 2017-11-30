@@ -1,7 +1,7 @@
 # Android Photo Filters
 
 [ ![Download](https://api.bintray.com/packages/androidhive-info/maven/imagefilters/images/download.svg) ](https://bintray.com/androidhive-info/maven/imagefilters/_latestVersion)
-[![Example](https://img.shields.io/badge/Example-Instagram%20Filters-green.svg)]((https://www.androidhive.info/2017/11/android-building-image-filters-like-instagram/))
+[ ![Example](https://img.shields.io/badge/Example-Instagram%20Filters-green.svg)](https://www.androidhive.info/2017/11/android-building-image-filters-like-instagram/)
 
 This library is forked from [here](https://github.com/Zomato/AndroidPhotoFilters). All credits goes to respective owners.
 
@@ -57,6 +57,34 @@ imagePreview.setImageBitmap(filter.processFilter(bitmap));
 
 Current the below filters are available in filer pack. More will be added in future.
 
+<table border="0" width="100%" class="center-align">
+<tbody>
+<tr>
+<td>! [Filter](https://www.androidhive.info/wp-content/uploads/2017/11/struck-min.jpg)<img src="https://www.androidhive.info/wp-content/uploads/2017/11/struck-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41227" /><em>Struck</em></td>
+<td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/clarendon-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41226" /><em>Clarendon</em></td><td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/oldman-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41225" /><em>OldMan</em></td>
+</tr>
+<tr>
+<td class="center"><img src="https://www.androidhive.info/wp-content/uploads/2017/11/mars-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41224" /><em>Mars</em></td>
+<td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/rise-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41223" /><em>Rise</em></td><td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/april-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41222" /><em>April</em></td>
+</tr>
+<tr>
+<td class="center"><img src="https://www.androidhive.info/wp-content/uploads/2017/11/amazon-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41221" /><em>Amazon</em></td>
+<td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/starlit-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41220" /><em>Starlit</em></td><td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/whisper-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41219" /><em> Whisper</em></td>
+</tr>
+<tr>
+<td class="center"><img src="https://www.androidhive.info/wp-content/uploads/2017/11/lime-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41218" /><em>Lime</em></td>
+<td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/haan-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41217" /><em>Haan</em></td><td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/bluemess-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41216" /><em> Bluemess</em></td>
+</tr>
+<tr>
+<td class="center"><img src="https://www.androidhive.info/wp-content/uploads/2017/11/adele-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41215" /><em>Adele</em></td>
+<td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/cruz-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41214" /><em>Cruz</em></td><td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/metropolis-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41213" /><em> Metropolis</em></td>
+</tr>
+<tr>
+<td class="center"><img src="https://www.androidhive.info/wp-content/uploads/2017/11/audrey-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41212" /><em>Audrey</em></td>
+<td>&nbsp;</td><td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
 
 ## Features
 (This is documentation from original page)
