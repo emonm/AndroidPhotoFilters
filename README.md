@@ -98,53 +98,6 @@ PhotoFiltersSDK processes filter on any Image within fraction of second since pr
 * **[BrightnessSubfilter](#brightness) :** To change brightness levels.
 * **[VignetteSubfilter](#vignette) :** To apply vignette effect on image. 
 
-Library also comes with inbuilt Sample Filters (Refer [SampleFitlers.java](photofilterssdk/src/main/java/com/zomato/photofilters/SampleFilters.java)). Implementation is straightforward: 
-
-```java
-Filter fooFilter = SampleFilters.getBlueMessFilter();
-Bitmap outputImage = fooFilter.process(inputImage);
-```
-
-## Implementation
-
-### Adding Dependency
-
-Simply add Dependency on artifact in your `build.gradle` : 
-
-```gradle
-dependencies {
-    compile 'com.github.zomato:androidphotofilters:1.0.1'
-    ...
-```
-
-**OR** 
-
-Copy|Paste  photofilterssdk from the repo to your project and include photofiltersdk in your `settings.gradle` like this :
-
-```gradle
-include ':photofilterssdk'
-```
-Add dependency in your `build.gradle` :
-
-```gradle
-compile project(':photofilterssdk')
-```
-
-### Usage
-
-Load native library in your activity :
-
-```java
-public class MainActivity extends AppCompatActivity {
-    static
-    {
-        System.loadLibrary("NativeImageProcessor");
-    }
-    ...
-```
-
-then
-
 ```java
 Filter myFilter = new Filter();
 myFilter.addSubFilter(new BrightnessSubFilter(30));
