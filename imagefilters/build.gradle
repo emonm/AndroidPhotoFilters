@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 
 def packageName = 'info.androidhive'
-def libraryVersion = '1.0.6'
+def libraryVersion = '1.0.7'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'

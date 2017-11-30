@@ -12,54 +12,47 @@ import com.zomato.photofilters.imageprocessors.subfilters.ToneCurveSubFilter;
 import com.zomato.photofilters.imageprocessors.subfilters.VignetteSubfilter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
  * Originally created by @author Varun on 01/07/15.
  * <p>
- * Update by @author Ravi Tamada on 28/10/17.
+ * Added filters by @author Ravi Tamada on 29/11/17.
  * Added multiple filters, the filter names were inspired from
  * various image filters apps
- * ------
- * Filters name list
- * 1. Star Lit
- * 2. Blue Mess
- * 3. Awe Struck Vibe
- * 4. Lime Stutter
- * 5. Night Whisper
- * 6. Sunday
- * 7. Adele
- * 8. Sierra
- * 9. Mars
- * 10. April
- * 11. Old Man
  */
 public final class FilterPack {
 
     private FilterPack() {
     }
 
-    // TODO - keep short filter names
+    /***
+     * the filter pack,
+     * @param context
+     * @return list of filters
+     */
     public static List<Filter> getFilterPack(Context context) {
         List<Filter> filters = new ArrayList<>();
-        filters.add(getSundayFilter());
-        filters.add(getAdeleFilter());
-        filters.add(getSierraFilter());
-        filters.add(getBW(context));
-        filters.add(getMarsFilter());
-
-        //filters.put("StarLit", getStarLitFilter());
-        //filters.put("Blue Mess", getBlueMessFilter());
-        //filters.put("Vibe", getAweStruckVibeFilter());
-        //filters.put("Lime", getLimeStutterFilter());
-        //filters.put("Night", getNightWhisperFilter());
-        /*filters.put("April", getAprilFilter());
-        filters.put("Old Man", getOldManFilter());*/
+        filters.add(getAweStruckVibeFilter(context));
+        filters.add(getClarendon(context));
+        filters.add(getOldManFilter(context));
+        filters.add(getMarsFilter(context));
+        filters.add(getRiseFilter(context));
+        filters.add(getAprilFilter(context));
+        filters.add(getAmazonFilter(context));
+        filters.add(getStarLitFilter(context));
+        filters.add(getNightWhisperFilter(context));
+        filters.add(getLimeStutterFilter(context));
+        filters.add(getHaanFilter(context));
+        filters.add(getBlueMessFilter(context));
+        filters.add(getAdeleFilter(context));
+        filters.add(getCruzFilter(context));
+        filters.add(getMetropolis(context));
+        filters.add(getAudreyFilter(context));
         return filters;
     }
 
-    public static Filter getStarLitFilter() {
+    public static Filter getStarLitFilter(Context context) {
         Point[] rgbKnots;
         rgbKnots = new Point[8];
         rgbKnots[0] = new Point(0, 0);
@@ -71,11 +64,12 @@ public final class FilterPack {
         rgbKnots[6] = new Point(207, 233);
         rgbKnots[7] = new Point(255, 255);
         Filter filter = new Filter();
+        filter.setName(context.getString(R.string.starlit));
         filter.addSubFilter(new ToneCurveSubFilter(rgbKnots, null, null, null));
         return filter;
     }
 
-    public static Filter getBlueMessFilter() {
+    public static Filter getBlueMessFilter(Context context) {
         Point[] redKnots;
         redKnots = new Point[8];
         redKnots[0] = new Point(0, 0);
@@ -87,13 +81,14 @@ public final class FilterPack {
         redKnots[6] = new Point(225, 242);
         redKnots[7] = new Point(255, 255);
         Filter filter = new Filter();
+        filter.setName(context.getString(R.string.bluemess));
         filter.addSubFilter(new ToneCurveSubFilter(null, redKnots, null, null));
         filter.addSubFilter(new BrightnessSubFilter(30));
         filter.addSubFilter(new ContrastSubFilter(1f));
         return filter;
     }
 
-    public static Filter getAweStruckVibeFilter() {
+    public static Filter getAweStruckVibeFilter(Context context) {
         Point[] rgbKnots;
         Point[] redKnots;
         Point[] greenKnots;
@@ -133,23 +128,24 @@ public final class FilterPack {
         blueKnots[6] = new Point(255, 255);
 
         Filter filter = new Filter();
+        filter.setName(context.getString(R.string.struck));
         filter.addSubFilter(new ToneCurveSubFilter(rgbKnots, redKnots, greenKnots, blueKnots));
         return filter;
     }
 
-    public static Filter getLimeStutterFilter() {
+    public static Filter getLimeStutterFilter(Context context) {
         Point[] blueKnots;
         blueKnots = new Point[3];
         blueKnots[0] = new Point(0, 0);
         blueKnots[1] = new Point(165, 114);
         blueKnots[2] = new Point(255, 255);
-        // Check whether output is null or not.
         Filter filter = new Filter();
+        filter.setName(context.getString(R.string.lime));
         filter.addSubFilter(new ToneCurveSubFilter(null, null, null, blueKnots));
         return filter;
     }
 
-    public static Filter getNightWhisperFilter() {
+    public static Filter getNightWhisperFilter(Context context) {
         Point[] rgbKnots;
         Point[] redKnots;
         Point[] greenKnots;
@@ -177,12 +173,13 @@ public final class FilterPack {
         blueKnots[2] = new Point(255, 255);
 
         Filter filter = new Filter();
+        filter.setName(context.getString(R.string.whisper));
         filter.addSubFilter(new ContrastSubFilter(1.5f));
         filter.addSubFilter(new ToneCurveSubFilter(rgbKnots, redKnots, greenKnots, blueKnots));
         return filter;
     }
 
-    public static Filter getSundayFilter() {
+    public static Filter getAmazonFilter(Context context) {
         Point[] blueKnots;
         blueKnots = new Point[6];
         blueKnots[0] = new Point(0, 0);
@@ -191,67 +188,159 @@ public final class FilterPack {
         blueKnots[3] = new Point(86, 151);
         blueKnots[4] = new Point(167, 209);
         blueKnots[5] = new Point(255, 255);
-        // Check whether output is null or not.
-        Filter filter = new Filter("Sunday");
+        Filter filter = new Filter(context.getString(R.string.amazon));
         filter.addSubFilter(new ContrastSubFilter(1.2f));
         filter.addSubFilter(new ToneCurveSubFilter(null, null, null, blueKnots));
         return filter;
     }
 
-    public static Filter getAdeleFilter() {
-        Filter filter = new Filter("Adele");
+    public static Filter getAdeleFilter(Context context) {
+        Filter filter = new Filter(context.getString(R.string.adele));
         filter.addSubFilter(new SaturationSubfilter(-100f));
         return filter;
     }
 
-    public static Filter getSierraFilter() {
-        Filter filter = new Filter("Sierra");
+    public static Filter getCruzFilter(Context context) {
+        Filter filter = new Filter(context.getString(R.string.cruz));
         filter.addSubFilter(new SaturationSubfilter(-100f));
         filter.addSubFilter(new ContrastSubFilter(1.3f));
         filter.addSubFilter(new BrightnessSubFilter(20));
         return filter;
     }
 
-    public static Filter getBW(Context context){
-        Filter filter = new Filter("BW");
+    public static Filter getMetropolis(Context context) {
+        Filter filter = new Filter(context.getString(R.string.metropolis));
+        filter.addSubFilter(new SaturationSubfilter(-1f));
+        filter.addSubFilter(new ContrastSubFilter(1.7f));
+        filter.addSubFilter(new BrightnessSubFilter(70));
+        return filter;
+    }
+
+    public static Filter getAudreyFilter(Context context) {
+        Filter filter = new Filter(context.getString(R.string.audrey));
+
+        Point[] redKnots;
+        redKnots = new Point[3];
+        redKnots[0] = new Point(0, 0);
+        redKnots[1] = new Point(124, 138);
+        redKnots[2] = new Point(255, 255);
+
         filter.addSubFilter(new SaturationSubfilter(-100f));
-        filter.addSubFilter(new ColorOverlaySubFilter(1, 102, 51, 0));
+        filter.addSubFilter(new ContrastSubFilter(1.3f));
+        filter.addSubFilter(new BrightnessSubFilter(20));
+        filter.addSubFilter(new ToneCurveSubFilter(null, redKnots, null, null));
         return filter;
     }
 
-    public static Filter getMarsFilter() {
+    public static Filter getRiseFilter(Context context) {
         Point[] blueKnots;
-        blueKnots = new Point[3];
+        Point[] redKnots;
+
+        blueKnots = new Point[4];
         blueKnots[0] = new Point(0, 0);
-        blueKnots[1] = new Point(233, 78);
-        blueKnots[2] = new Point(255, 255);
-        // Check whether output is null or not.
-        Filter filter = new Filter("Mars");
-        filter.addSubFilter(new ToneCurveSubFilter(null, null, null, blueKnots));
+        blueKnots[1] = new Point(39, 70);
+        blueKnots[2] = new Point(150, 200);
+        blueKnots[3] = new Point(255, 255);
+
+        redKnots = new Point[4];
+        redKnots[0] = new Point(0, 0);
+        redKnots[1] = new Point(45, 64);
+        redKnots[2] = new Point(170, 190);
+        redKnots[3] = new Point(255, 255);
+
+        Filter filter = new Filter(context.getString(R.string.rise));
+        filter.addSubFilter(new ContrastSubFilter(1.9f));
+        filter.addSubFilter(new BrightnessSubFilter(60));
+        filter.addSubFilter(new VignetteSubfilter(context, 200));
+        filter.addSubFilter(new ToneCurveSubFilter(null, redKnots, null, blueKnots));
         return filter;
     }
 
-    public static Filter getAprilFilter() {
-        Point[] blueKnots;
-        blueKnots = new Point[3];
-        blueKnots[0] = new Point(0, 0);
-        blueKnots[1] = new Point(100, 100);
-        blueKnots[2] = new Point(255, 255);
-        // Check whether output is null or not.
-        Filter filter = new Filter("April");
-        filter.addSubFilter(new ToneCurveSubFilter(null, null, null, blueKnots));
+    public static Filter getMarsFilter(Context context) {
+        Filter filter = new Filter(context.getString(R.string.mars));
+        filter.addSubFilter(new ContrastSubFilter(1.5f));
+        filter.addSubFilter(new BrightnessSubFilter(10));
         return filter;
     }
 
-    public static Filter getOldManFilter() {
+    public static Filter getAprilFilter(Context context) {
         Point[] blueKnots;
-        blueKnots = new Point[3];
+        Point[] redKnots;
+
+        blueKnots = new Point[4];
         blueKnots[0] = new Point(0, 0);
-        blueKnots[1] = new Point(100, 178);
-        blueKnots[2] = new Point(255, 255);
-        // Check whether output is null or not.
-        Filter filter = new Filter("OldMan");
-        filter.addSubFilter(new ToneCurveSubFilter(null, null, null, blueKnots));
+        blueKnots[1] = new Point(39, 70);
+        blueKnots[2] = new Point(150, 200);
+        blueKnots[3] = new Point(255, 255);
+
+        redKnots = new Point[4];
+        redKnots[0] = new Point(0, 0);
+        redKnots[1] = new Point(45, 64);
+        redKnots[2] = new Point(170, 190);
+        redKnots[3] = new Point(255, 255);
+
+        Filter filter = new Filter(context.getString(R.string.april));
+        filter.addSubFilter(new ContrastSubFilter(1.5f));
+        filter.addSubFilter(new BrightnessSubFilter(5));
+        filter.addSubFilter(new VignetteSubfilter(context, 150));
+        filter.addSubFilter(new ToneCurveSubFilter(null, redKnots, null, blueKnots));
+        return filter;
+    }
+
+    public static Filter getHaanFilter(Context context) {
+        Point[] greenKnots;
+        greenKnots = new Point[3];
+        greenKnots[0] = new Point(0, 0);
+        greenKnots[1] = new Point(113, 142);
+        greenKnots[2] = new Point(255, 255);
+
+        Filter filter = new Filter(context.getString(R.string.haan));
+        filter.addSubFilter(new ContrastSubFilter(1.3f));
+        filter.addSubFilter(new BrightnessSubFilter(60));
+        filter.addSubFilter(new VignetteSubfilter(context, 200));
+        filter.addSubFilter(new ToneCurveSubFilter(null, null, greenKnots, null));
+        return filter;
+    }
+
+    public static Filter getOldManFilter(Context context) {
+        Filter filter = new Filter(context.getString(R.string.oldman));
+        filter.addSubFilter(new BrightnessSubFilter(30));
+        filter.addSubFilter(new SaturationSubfilter(0.8f));
+        filter.addSubFilter(new ContrastSubFilter(1.3f));
+        filter.addSubFilter(new VignetteSubfilter(context, 100));
+        filter.addSubFilter(new ColorOverlaySubFilter(100, .2f, .2f, .1f));
+        return filter;
+    }
+
+    public static Filter getClarendon(Context context) {
+        Point[] redKnots;
+        Point[] greenKnots;
+        Point[] blueKnots;
+
+        redKnots = new Point[4];
+        redKnots[0] = new Point(0, 0);
+        redKnots[1] = new Point(56, 68);
+        redKnots[2] = new Point(196, 206);
+        redKnots[3] = new Point(255, 255);
+
+
+        greenKnots = new Point[4];
+        greenKnots[0] = new Point(0, 0);
+        greenKnots[1] = new Point(46, 77);
+        greenKnots[2] = new Point(160, 200);
+        greenKnots[3] = new Point(255, 255);
+
+
+        blueKnots = new Point[4];
+        blueKnots[0] = new Point(0, 0);
+        blueKnots[1] = new Point(33, 86);
+        blueKnots[2] = new Point(126, 220);
+        blueKnots[3] = new Point(255, 255);
+
+        Filter filter = new Filter(context.getString(R.string.clarendon));
+        filter.addSubFilter(new ContrastSubFilter(1.5f));
+        filter.addSubFilter(new BrightnessSubFilter(-10));
+        filter.addSubFilter(new ToneCurveSubFilter(null, redKnots, greenKnots, blueKnots));
         return filter;
     }
 }

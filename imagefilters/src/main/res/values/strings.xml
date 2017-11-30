@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">photofilterssdk</string>
+    <string name="clarendon">Clarendon</string>
+    <string name="oldman">OldMan</string>
+    <string name="haan">Haan</string>
+    <string name="april">April</string>
+    <string name="mars">Mars</string>
+    <string name="rise">Rise</string>
+    <string name="audrey">Audrey</string>
+    <string name="metropolis">Metropolis</string>
+    <string name="cruz">Cruz</string>
+    <string name="adele">Adele</string>
+    <string name="amazon">Amazon</string>
+    <string name="starlit">Starlit</string>
+    <string name="bluemess">BlueMess</string>
+    <string name="struck">Struck</string>
+    <string name="whisper">Whisper</string>
+    <string name="lime">Lime</string>
 </resources>
