@@ -60,7 +60,7 @@ Current the below filters are available in filer pack. More will be added in fut
 <table border="0" width="100%" class="center-align">
 <tbody>
 <tr>
-<td>! [Filter](https://www.androidhive.info/wp-content/uploads/2017/11/struck-min.jpg)<img src="https://www.androidhive.info/wp-content/uploads/2017/11/struck-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41227" /><em>Struck</em></td>
+<td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/struck-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41227" /><em>Struck</em></td>
 <td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/clarendon-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41226" /><em>Clarendon</em></td><td><img src="https://www.androidhive.info/wp-content/uploads/2017/11/oldman-min.jpg" alt="" width="230" height="230" class="alignnone size-full wp-image-41225" /><em>OldMan</em></td>
 </tr>
 <tr>
