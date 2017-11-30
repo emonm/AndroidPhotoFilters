@@ -22,7 +22,16 @@ dependencies {
 
 ```
 
-2. Get the pre defined Filter Pack to generate the thumbnails
+2. Load the native library in your activity
+```java
+public class MainActivity extends AppCompatActivity {
+    static
+    {
+        System.loadLibrary("NativeImageProcessor");
+    }
+```
+
+3. Get the pre defined Filter Pack to generate the thumbnails. Refer [FilterPack.java](https://github.com/ravi8x/AndroidPhotoFilters/blob/master/imagefilters/src/main/java/com/zomato/photofilters/FilterPack.java) to generate your own filters.
 ```java
 List<filter> filters = FilterPack.getFilterPack(getActivity());
  
@@ -35,7 +44,7 @@ for (Filter filter : filters) {
 }
 ```
 
-3. You can apply single filter too on bitmap.
+4. You can apply single filter too on bitmap.
 ```java
 // Accessing single filter...
 Bitmap bitmap = your_bitmap_;
@@ -43,6 +52,10 @@ Filter clarendon = FilterPack.getClarendon();
 // apply filter
 imagePreview.setImageBitmap(filter.processFilter(bitmap));
 ```
+
+## The Filter Pack
+
+Current the below filters are available in filer pack. More will be added in future.
 
 
 ## Features
