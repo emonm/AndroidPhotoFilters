@@ -44,7 +44,7 @@ for (Filter filter : filters) {
 }
 ```
 
-4. You can apply single filter too on bitmap.
+4. Apply desired filter on to bitmap image.
 ```java
 // Accessing single filter...
 Bitmap bitmap = your_bitmap_;
@@ -55,7 +55,7 @@ imagePreview.setImageBitmap(filter.processFilter(bitmap));
 
 ## The Filter Pack
 
-Current the below filters are available in filer pack. More will be added in future.
+Currently the below filters are available in filer pack. More will be added in future.
 
 <table border="0" width="100%" class="center-align">
 <tbody>
@@ -87,7 +87,7 @@ Current the below filters are available in filer pack. More will be added in fut
 </table>
 
 ## Features
-(This is documentation from original page)
+(This is the older documentation from original page)
 
 PhotoFiltersSDK processes filter on any Image within fraction of second since processing logic is in NDK. At present following image filters are included: 
 
