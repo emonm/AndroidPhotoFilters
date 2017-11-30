@@ -1,15 +1,53 @@
-# PhotoFiltersSDK
+# Android Photo Filters
 
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidPhotoFilters-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3703)
+[ ![Download](https://api.bintray.com/packages/androidhive-info/maven/imagefilters/images/download.svg) ](https://bintray.com/androidhive-info/maven/imagefilters/_latestVersion)
+[![Example](https://img.shields.io/badge/Example-Instagram%20Filters-green.svg)]((https://www.androidhive.info/2017/11/android-building-image-filters-like-instagram/))
 
-PhotoFiltersSDK aims to provide fast, powerful and flexible image processing instrument for creating awesome effects on any image media. 
+This library is forked from [here](https://github.com/Zomato/AndroidPhotoFilters). All credits goes to respective owners.
 
-Library supports OS on API 15 and above.
+An example article demonstrating Instagram Like Interface can be found [here](https://www.androidhive.info/2017/11/android-building-image-filters-like-instagram/)
 
-![PhotoFilters gif](art/photofilters.gif)
+![Instagram Filters](https://www.androidhive.info/wp-content/uploads/2017/11/android-instagram-filters-youtube-min.jpg)
+
+## How to use the Library
+
+1. Include the Filters library in build.gradle
+```java
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // ...
+ 
+    implementation 'info.androidhive:imagefilters:1.0.7'
+}
+
+```
+
+2. Get the pre defined Filter Pack to generate the thumbnails
+```java
+List<filter> filters = FilterPack.getFilterPack(getActivity());
+ 
+for (Filter filter : filters) {
+        ThumbnailItem item = new ThumbnailItem();
+        item.image = thumbImage;
+        item.filter = filter;
+        item.filterName = filter.getName();
+        ThumbnailsManager.addThumb(tI);
+}
+```
+
+3. You can apply single filter too on bitmap.
+```java
+// Accessing single filter...
+Bitmap bitmap = your_bitmap_;
+Filter clarendon = FilterPack.getClarendon();
+// apply filter
+imagePreview.setImageBitmap(filter.processFilter(bitmap));
+```
+
 
 ## Features
+(This is documentation from original page)
+
 PhotoFiltersSDK processes filter on any Image within fraction of second since processing logic is in NDK. At present following image filters are included: 
 
 * **[ToneCurveSubfilter](#tonecurve) :** With this powerful filter you can change RGB channels of any image to create great results.

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements ThumbnailCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         activity = this;
-        drawable = R.drawable.ravi;
+        drawable = R.drawable.dog;
         initUIWidgets();
     }
 
